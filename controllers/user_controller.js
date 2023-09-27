@@ -80,7 +80,7 @@ export const check_login = async (req, res) => {
 export const updatefields = async (req, res) => {
     try {
         const {username,password} = req.body;
-        const user_exist = await Users.findOneAndUpdate({username},{username,email,password,number}).exec();
+        const user_exist = await Users.findOneAndUpdate({username},{email}).exec();
          return res.send("success");
     } catch (error) {
         return res.send(error);
